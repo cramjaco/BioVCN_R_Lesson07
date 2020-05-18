@@ -102,7 +102,7 @@ Linear models like to assume that the residuals are normally distributed. We wan
 plot(mod)
 ```
 
-## Processing models
+## Other way of looking at output data
 
 the `broom` package gives a nice matrix version of model results
 
@@ -146,7 +146,7 @@ Lets see if humanity is a reasonable predictor of a characters' mass.
 First, lets plot the two against eachother
 
 ```{r}
-ggplot(aes(mass, isHuman), data = starwars02) + geom_point()
+ggplot(aes(isHuman, mass), data = starwars02) + geom_point()
 ```
 
 ok, one person has a species that is NA. It looks like humans tend to be intermediate in mass, with a lot of overlap of the non humans.
@@ -174,7 +174,7 @@ That said, our p value for the isHumanYes term is 0.171, which is > 0.05, which 
 We can make our model even more complicated by adding in gender.
 
 ```{r}
-plotHumanSpec <- ggplot(aes(mass, isHuman, shape = gender, name = name, species = species), data = starwars02) + geom_point(size = 2) 
+plotHumanSpec <- ggplot(aes(x = isHuman, y = mass, shape = gender, name = name, species = species), data = starwars02) + geom_point(size = 2) 
 
 ggplotly(plotHumanSpec)
 ```
