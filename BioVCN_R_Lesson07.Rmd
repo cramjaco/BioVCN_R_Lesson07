@@ -33,7 +33,7 @@ Mouse over the outlier so you can see who it is.
 
 ![That was my first guess too](pics/498px-Jabba_the_Hutt.jpg)
 
-Jabba is probably going to screw up all of our stats, lets focus on the relationship of all of the other charactersby removing him.
+Jabba is probably going to screw up all of our stats, lets focus on the relationship of all of the other characters by removing him.
 
 ```{r}
 starwars01 <- starwars %>% filter(!str_detect(name, "Jabba")) # Complecated syntac because I can't spell the rest of his name
